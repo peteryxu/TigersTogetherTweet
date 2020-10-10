@@ -68,10 +68,12 @@ class _HomePageState extends State<HomePage> {
     final chatState = Provider.of<ChatState>(context, listen: false);
     final state = Provider.of<AuthState>(context, listen: false);
     chatState.databaseInit(state.userId, state.userId);
-    /// It will update fcm token in database 
+
+    /// It will update fcm token in database
     /// fcm token is required to send firebase notification
     state.updateFCMToken();
-    /// It get fcm server key 
+
+    /// It get fcm server key
     /// Server key is required to configure firebase notification
     /// Without fcm server notification can not be sent
     chatState.getFCMServerKey();
@@ -126,32 +128,43 @@ class _HomePageState extends State<HomePage> {
 
   Widget _getPage(int index) {
     switch (index) {
+      //for Proconian news
       case 0:
         return HomeTab(
           scaffoldKey: _scaffoldKey,
         );
         break;
+
+      // for followed people and tweets
       case 1:
-        return NotificationPage(scaffoldKey: _scaffoldKey);
-        break;  
-      /* case 2:
         return FeedPage(
           scaffoldKey: _scaffoldKey,
           refreshIndicatorKey: refreshIndicatorKey,
         );
-        break; */
+        break;
+
+      // for direct messages
       case 2:
+        return ChatListPage(scaffoldKey: _scaffoldKey);
+        break;
+
+      // for search peoples
+      case 3:
+        return SearchPage(scaffoldKey: _scaffoldKey);
+
+        break;
+
+      //for COVID
+      case 4:
         return CovidPage(
           scaffoldKey: _scaffoldKey,
         );
-        break;  
-      case 3:
-        return SearchPage(scaffoldKey: _scaffoldKey);
         break;
-      
-      case 4:
-        return ChatListPage(scaffoldKey: _scaffoldKey);
-        break;
+
+      /*case 5:
+        return NotificationPage(scaffoldKey: _scaffoldKey);
+        break;  */
+
       default:
         return HomeTab(scaffoldKey: _scaffoldKey);
         break;

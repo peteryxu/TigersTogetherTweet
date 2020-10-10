@@ -8,6 +8,8 @@ class AppState extends ChangeNotifier{
     _isBusy = value;
     notifyListeners();
   }
+
+  
   int _pageIndex = 0;
   int get pageIndex {
      return _pageIndex;

@@ -36,9 +36,11 @@ class _BottomMenubarState extends State<BottomMenubar>{
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   _icon(null,0,icon:0 == state.pageIndex ? AppIcon.homeFill : AppIcon.home,isCustomIcon:true),
-                  _icon(null,1,icon:1 == state.pageIndex ? AppIcon.searchFill : AppIcon.search,isCustomIcon:true),
-                  _icon(null,2,icon: 2 == state.pageIndex ? AppIcon.notificationFill : AppIcon.notification,isCustomIcon:true),
-                  _icon(null,3,icon:3 == state.pageIndex ? AppIcon.messageFill :AppIcon.messageEmpty,isCustomIcon:true),
+                  _icon(null,1,icon: 1 == state.pageIndex ? AppIcon.notificationFill : AppIcon.notification,isCustomIcon:true),
+                  _icon(null,2,icon:2 == state.pageIndex ? AppIcon.heartFill : AppIcon.heartEmpty,isCustomIcon:true),
+                  _icon(null,3,icon:3 == state.pageIndex ? AppIcon.searchFill : AppIcon.search,isCustomIcon:true),
+                 
+                  _icon(null,4,icon:4 == state.pageIndex ? AppIcon.messageFill :AppIcon.messageEmpty,isCustomIcon:true),
                 ],
               ),
     );

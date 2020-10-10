@@ -12,18 +12,25 @@ List<String> dummyProfilePicList = [
 ];
 
 class AppIcon{
-  static final int fabTweet = 0xf029;
+
   static final int messageEmpty = 0xf187;
   static final int messageFill = 0xf554;
+
   static final int search = 0xf058;
   static final int searchFill = 0xf558;
+
   static final int notification = 0xf055;
   static final int notificationFill = 0xf019;
-  static final int messageFab = 0xf053;
+
+ 
   static final int home = 0xf053;
   static final int homeFill = 0xF553;
+
   static final int heartEmpty = 0xf148;
   static final int heartFill = 0xf015;
+
+  static final int fabTweet = 0xf029;
+  static final int messageFab = 0xf053;
   static final int settings = 0xf059;
   static final int adTheRate = 0xf064;
   static final int reply = 0xf151;

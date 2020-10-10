@@ -15,6 +15,7 @@ import 'common/sidebar.dart';
 import 'notification/notificationPage.dart';
 import 'search/SearchPage.dart';
 import '../proconian/tabs/home_tab.dart';
+import './CovidPage.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
@@ -131,17 +132,23 @@ class _HomePageState extends State<HomePage> {
         );
         break;
       case 1:
+        return NotificationPage(scaffoldKey: _scaffoldKey);
+        break;  
+      /* case 2:
         return FeedPage(
           scaffoldKey: _scaffoldKey,
           refreshIndicatorKey: refreshIndicatorKey,
         );
-        break;
+        break; */
       case 2:
+        return CovidPage(
+          scaffoldKey: _scaffoldKey,
+        );
+        break;  
+      case 3:
         return SearchPage(scaffoldKey: _scaffoldKey);
         break;
-      case 3:
-        return NotificationPage(scaffoldKey: _scaffoldKey);
-        break;
+      
       case 4:
         return ChatListPage(scaffoldKey: _scaffoldKey);
         break;

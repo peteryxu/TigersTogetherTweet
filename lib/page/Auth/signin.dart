@@ -28,12 +28,14 @@ class _SignInState extends State<SignIn> {
     loader = CustomLoader();
     super.initState();
   }
+
   @override
-  void dispose() { 
+  void dispose() {
     _emailController.dispose();
     _passwordController.dispose();
     super.dispose();
   }
+
   Widget _body(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
@@ -42,20 +44,26 @@ class _SignInState extends State<SignIn> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            SizedBox(height: 150),
+            SizedBox(height: 50),
+            TitleText(
+              "Enter Email",
+              fontSize: 20,
+            ),
+            SizedBox(height: 30),
             _entryFeild('Enter email', controller: _emailController),
             _entryFeild('Enter password',
                 controller: _passwordController, isPassword: true),
             _emailLoginButton(context),
-            SizedBox(height: 20),
+            SizedBox(height: 0),
             _labelButton('Forget password?', onPressed: () {
               Navigator.of(context).pushNamed('/ForgetPasswordPage');
             }),
+            SizedBox(height: 10),
             Divider(
               height: 30,
             ),
             SizedBox(
-              height: 30,
+              height: 10,
             ),
             GoogleLoginButton(
               loginCallback: widget.loginCallback,
@@ -89,7 +97,7 @@ class _SignInState extends State<SignIn> {
           border: InputBorder.none,
           focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(30.0)),
-              borderSide: BorderSide(color: Colors.blue)),
+              borderSide: BorderSide(color: Theme.of(context).primaryColor)),
           contentPadding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
         ),
       ),
@@ -118,7 +126,7 @@ class _SignInState extends State<SignIn> {
       margin: EdgeInsets.symmetric(vertical: 35),
       child: FlatButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-        color: TwitterColor.dodgetBlue,
+        color: Theme.of(context).primaryColor,
         onPressed: _emailLogin,
         padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
         child: TitleText('Submit', color: Colors.white),

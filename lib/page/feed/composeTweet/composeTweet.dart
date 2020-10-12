@@ -175,9 +175,14 @@ class _ComposeTweetReplyPageState extends State<ComposeTweetPage> {
         tags: tags,
         parentkey: widget.isTweet
             ? null
-            : widget.isRetweet ? null : state.tweetToReplyModel.key,
-        childRetwetkey:
-            widget.isTweet ? null : widget.isRetweet ? model.key : null,
+            : widget.isRetweet
+                ? null
+                : state.tweetToReplyModel.key,
+        childRetwetkey: widget.isTweet
+            ? null
+            : widget.isRetweet
+                ? model.key
+                : null,
         userId: myUser.userId);
     return reply;
   }
@@ -189,8 +194,11 @@ class _ComposeTweetReplyPageState extends State<ComposeTweetPage> {
         title: customTitleText(''),
         onActionPressed: _submitButton,
         isCrossButton: true,
-        submitButtonText:
-            widget.isTweet ? 'Tweet' : widget.isRetweet ? 'Retweet' : 'Reply',
+        submitButtonText: widget.isTweet
+            ? 'Tweet'
+            : widget.isRetweet
+                ? 'Retweet'
+                : 'Reply',
         isSubmitDisable:
             !Provider.of<ComposeTweetState>(context).enableSubmitButton ||
                 Provider.of<FeedState>(context).isBusy,
@@ -530,10 +538,13 @@ class _TextField extends StatelessWidget {
           },
           maxLines: null,
           decoration: InputDecoration(
+              fillColor: Colors.red,
               border: InputBorder.none,
               hintText: isTweet
                   ? 'What\'s happening?'
-                  : isRetweet ? 'Add a comment' : 'Tweet your reply',
+                  : isRetweet
+                      ? 'Add a comment'
+                      : 'Tweet your reply',
               hintStyle: TextStyle(fontSize: 18)),
         ),
       ],
@@ -567,7 +578,8 @@ class _UserList extends StatelessWidget {
                   onUserSelected: (user) {
                     textEditingController.text =
                         Provider.of<ComposeTweetState>(context)
-                            .getDescription(user.userName) + " ";
+                                .getDescription(user.userName) +
+                            " ";
                     textEditingController.selection = TextSelection.collapsed(
                         offset: textEditingController.text.length);
                     Provider.of<ComposeTweetState>(context).onUserSelected();

@@ -22,17 +22,14 @@ class FeedPage extends StatelessWidget {
 
   Widget _floatingActionButton(BuildContext context) {
     return FloatingActionButton(
-      onPressed: () {
-        Navigator.of(context).pushNamed('/CreateFeedPage/tweet');
-      },
-      child: customIcon(
-        context,
-        icon: AppIcon.fabTweet,
-        istwitterIcon: true,
-        iconColor: Theme.of(context).colorScheme.onPrimary,
-        size: 25,
-      ),
-    );
+        backgroundColor: Theme.of(context).primaryColor,
+        onPressed: () {
+          Navigator.of(context).pushNamed('/CreateFeedPage/tweet');
+        },
+        child: Icon(
+          Icons.add,
+          size: 25,
+        ));
   }
 
   @override
@@ -40,22 +37,20 @@ class FeedPage extends StatelessWidget {
     return Scaffold(
       floatingActionButton: _floatingActionButton(context),
       backgroundColor: TwitterColor.mystic,
-      body: SafeArea(
-        child: Container(
-          height: fullHeight(context),
-          width: fullWidth(context),
-          child: RefreshIndicator(
-            key: refreshIndicatorKey,
-            onRefresh: () async {
-              /// refresh home page feed
-              var feedState = Provider.of<FeedState>(context, listen: false);
-              feedState.getDataFromDatabase();
-              return Future.value(true);
-            },
-            child: _FeedPageBody(
-              refreshIndicatorKey: refreshIndicatorKey,
-              scaffoldKey: scaffoldKey,
-            ),
+      body: Container(
+        height: fullHeight(context),
+        width: fullWidth(context),
+        child: RefreshIndicator(
+          key: refreshIndicatorKey,
+          onRefresh: () async {
+            /// refresh home page feed
+            var feedState = Provider.of<FeedState>(context, listen: false);
+            feedState.getDataFromDatabase();
+            return Future.value(true);
+          },
+          child: _FeedPageBody(
+            refreshIndicatorKey: refreshIndicatorKey,
+            scaffoldKey: scaffoldKey,
           ),
         ),
       ),
@@ -138,11 +133,11 @@ class _FeedPageBody extends StatelessWidget {
       },
       child: SliverAppBar(
         floating: true,
-        elevation: 0,
+        elevation: 8,
         leading: _getUserAvatar(context),
-        title: customTitleText('Home'),
+        title: customTitleText('Feed'),
         iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
-        backgroundColor: Theme.of(context).appBarTheme.color,
+        backgroundColor: Colors.white,
         bottom: PreferredSize(
           child: Container(
             color: Colors.grey.shade200,

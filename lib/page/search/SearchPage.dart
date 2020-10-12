@@ -39,6 +39,7 @@ class _SearchPageState extends State<SearchPage> {
     final list = state.userlist;
     return Scaffold(
       appBar: CustomAppBar(
+        
         scaffoldKey: widget.scaffoldKey,
         icon: AppIcon.settings,
         onActionPressed: onSettingIconPressed,

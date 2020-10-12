@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_twitter_clone/widgets/customWidgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'package:http/http.dart' as http;
@@ -57,21 +58,24 @@ class _CovidPageState extends State<CovidPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: new AppBar(
-        title: new Text("Covid-19 Cases"),
+      appBar: AppBar(
+        leading: Padding(
+          child: Image.asset('assets/images/icon-480.png'),
+          padding: const EdgeInsets.all(8.0),
+        ),
+        backgroundColor: Colors.white,
+        title: customTitleText('COVID'),
         centerTitle: true,
       ),
       body: Column(
         children: <Widget>[
-          Container(
-          color: Colors.grey[200],
-          child: new Image.asset('assets/images/covid.jpeg'),
-          alignment: Alignment.center,
-        ),
+          SizedBox(
+            height: 20.0,
+          ),
           Center(
             child: SizedBox(
               //height: 400, // card height
-              height: 325, // card height
+              height: 275, // card height
               child: PageView.builder(
                 itemCount: data == null ? 0 : data.length,
                 controller: PageController(viewportFraction: 0.7),
@@ -80,6 +84,7 @@ class _CovidPageState extends State<CovidPage> {
                   return Transform.scale(
                     scale: i == _index ? 1 : 0.9,
                     child: Card(
+                      color: Colors.white,
                       elevation: 6,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20)),
@@ -89,17 +94,15 @@ class _CovidPageState extends State<CovidPage> {
                         children: <Widget>[
                           new Text(
                             data[_index]["country"],
-                            style: TextStyle(
-                                fontSize: 32, color: Colors.blue[700]),
+                            style: TextStyle(fontSize: 25, color: Theme.of(context).primaryColor),
                             textAlign: TextAlign.center,
                           ),
-                          new SizedBox(
-                            height: 20.0,
+                          SizedBox(
+                            height: 10.0,
                           ),
                           new Text(
                             "Cases: " + data[_index]["cases"].toString(),
-                            style: TextStyle(
-                                fontSize: 22, color: Colors.deepOrange[300]),
+                            style: TextStyle(fontSize: 18, color: Colors.black),
                           ),
                           new SizedBox(
                             height: 5.0,
@@ -107,15 +110,14 @@ class _CovidPageState extends State<CovidPage> {
                           new Text(
                             "Today Cases: " +
                                 data[_index]["todayCases"].toString(),
-                            style: TextStyle(
-                                fontSize: 22, color: Colors.deepOrange[300]),
+                            style: TextStyle(fontSize: 18, color: Colors.black),
                           ),
                           new SizedBox(
                             height: 5.0,
                           ),
                           new Text(
                             "Deaths: " + data[_index]["deaths"].toString(),
-                            style: TextStyle(fontSize: 22),
+                            style: TextStyle(fontSize: 18),
                           ),
                           new SizedBox(
                             height: 5.0,
@@ -123,22 +125,21 @@ class _CovidPageState extends State<CovidPage> {
                           new Text(
                             "Today Deaths: " +
                                 data[_index]["todayDeaths"].toString(),
-                            style: TextStyle(fontSize: 22),
+                            style: TextStyle(fontSize: 18),
                           ),
                           new SizedBox(
                             height: 5.0,
                           ),
                           new Text(
                             "Critical: " + data[_index]["critical"].toString(),
-                            style: TextStyle(fontSize: 22),
+                            style: TextStyle(fontSize: 18),
                           ),
                           new SizedBox(
                             height: 5.0,
                           ),
                           new Text(
                             "Active: " + data[_index]["active"].toString(),
-                            style: TextStyle(
-                                fontSize: 22, color: Colors.green[300]),
+                            style: TextStyle(fontSize: 18, color: Colors.black),
                           ),
                           new SizedBox(
                             height: 5.0,
@@ -146,8 +147,7 @@ class _CovidPageState extends State<CovidPage> {
                           new Text(
                             "Recovered: " +
                                 data[_index]["recovered"].toString(),
-                            style: TextStyle(
-                                fontSize: 22, color: Colors.green[300]),
+                            style: TextStyle(fontSize: 18, color: Colors.black),
                           ),
                         ],
                       ),
@@ -157,9 +157,22 @@ class _CovidPageState extends State<CovidPage> {
               ),
             ),
           ),
+          SizedBox(
+            height: 10.0,
+          ),
           RaisedButton(
+            color: Colors.yellow[200],
+          
             onPressed: _launchURL,
             child: Text('Orange County COVID Resources'),
+          ),
+          SizedBox(
+            height: 10.0,
+          ),
+          Container(
+            color: Colors.grey[200],
+            child: new Image.asset('assets/images/covid.jpeg'),
+            alignment: Alignment.center,
           ),
         ],
       ),

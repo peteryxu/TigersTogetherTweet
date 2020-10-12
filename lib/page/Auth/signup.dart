@@ -10,6 +10,7 @@ import 'package:flutter_twitter_clone/page/Auth/widget/googleLoginButton.dart';
 import 'package:flutter_twitter_clone/state/authState.dart';
 import 'package:flutter_twitter_clone/widgets/customWidgets.dart';
 import 'package:flutter_twitter_clone/widgets/newWidget/customLoader.dart';
+import 'package:flutter_twitter_clone/widgets/newWidget/title_text.dart';
 import 'package:provider/provider.dart';
 
 class Signup extends StatefulWidget {
@@ -56,6 +57,24 @@ class _SignupState extends State<Signup> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
+            SizedBox(height: 10),
+            TitleText(
+              'Have a School Email?',
+              fontSize: 20,
+            ),
+            SizedBox(height: 15),
+            GoogleLoginButton(
+              loginCallback: widget.loginCallback,
+              loader: loader,
+            ),
+            SizedBox(height: 15),
+            Divider(height: 30),
+            SizedBox(height: 15),
+            TitleText(
+              'Parents and Others',
+              fontSize: 20,
+            ),
+            SizedBox(height: 15),
             _entryFeild('Name', controller: _nameController),
             _entryFeild('Enter email',
                 controller: _emailController, isEmail: true),
@@ -65,15 +84,7 @@ class _SignupState extends State<Signup> {
             _entryFeild('Confirm password',
                 controller: _confirmController, isPassword: true),
             _submitButton(context),
-
-            Divider(height: 30),
-            SizedBox(height: 30),
             // _googleLoginButton(context),
-            GoogleLoginButton(
-              loginCallback: widget.loginCallback,
-              loader: loader,
-            ),
-            SizedBox(height: 30),
           ],
         ),
       ),
@@ -85,7 +96,7 @@ class _SignupState extends State<Signup> {
       bool isPassword = false,
       bool isEmail = false}) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 15),
+      margin: EdgeInsets.symmetric(vertical: 10),
       decoration: BoxDecoration(
         color: Colors.grey.shade200,
         borderRadius: BorderRadius.circular(30),
@@ -102,11 +113,10 @@ class _SignupState extends State<Signup> {
           hintText: hint,
           border: InputBorder.none,
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(
-              Radius.circular(30.0),
-            ),
-            borderSide: BorderSide(color: Colors.blue),
-          ),
+              borderRadius: BorderRadius.all(
+                Radius.circular(30.0),
+              ),
+              borderSide: BorderSide(color: Theme.of(context).primaryColor)),
           contentPadding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
         ),
       ),
@@ -119,7 +129,7 @@ class _SignupState extends State<Signup> {
       width: MediaQuery.of(context).size.width,
       child: FlatButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-        color: TwitterColor.dodgetBlue,
+        color: Theme.of(context).primaryColor,
         onPressed: _submitForm,
         padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
         child: Text('Sign up', style: TextStyle(color: Colors.white)),

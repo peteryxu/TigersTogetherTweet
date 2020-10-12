@@ -22,9 +22,9 @@ class _WelcomePageState extends State<WelcomePage> {
       width: MediaQuery.of(context).size.width,
       child: FlatButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-        color: TwitterColor.dodgetBlue,
+        color: Theme.of(context).primaryColor,
         onPressed: () {
-          var state = Provider.of<AuthState>(context,listen: false);
+          var state = Provider.of<AuthState>(context, listen: false);
           Navigator.push(
             context,
             MaterialPageRoute(
@@ -54,7 +54,7 @@ class _WelcomePageState extends State<WelcomePage> {
             ),
             Spacer(),
             TitleText(
-              'See what\'s happening in the world right now.',
+              'See what\'s happening at CHHS right now.',
               fontSize: 25,
             ),
             SizedBox(
@@ -67,13 +67,13 @@ class _WelcomePageState extends State<WelcomePage> {
               crossAxisAlignment: WrapCrossAlignment.center,
               children: <Widget>[
                 TitleText(
-                  'Have an account already?',
+                  'Already have an account?',
                   fontSize: 14,
                   fontWeight: FontWeight.w300,
                 ),
                 InkWell(
                   onTap: () {
-                    var state = Provider.of<AuthState>(context,listen: false);
+                    var state = Provider.of<AuthState>(context, listen: false);
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -103,7 +103,7 @@ class _WelcomePageState extends State<WelcomePage> {
 
   @override
   Widget build(BuildContext context) {
-    var state = Provider.of<AuthState>(context,listen: false);
+    var state = Provider.of<AuthState>(context, listen: false);
     return Scaffold(
       body: state.authStatus == AuthStatus.NOT_LOGGED_IN ||
               state.authStatus == AuthStatus.NOT_DETERMINED

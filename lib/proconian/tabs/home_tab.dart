@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_twitter_clone/widgets/customWidgets.dart';
 
 import '../config.dart';
 import '../model/post_entity.dart';
@@ -7,32 +8,40 @@ import '../widgets/featured_category_list.dart';
 import '../widgets/posts_list.dart';
 
 class HomeTab extends StatelessWidget {
- 
- const HomeTab({Key key, this.scaffoldKey}) : super(key: key);
+  const HomeTab({Key key, this.scaffoldKey}) : super(key: key);
 
   final GlobalKey<ScaffoldState> scaffoldKey;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: SingleChildScrollView(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            ListHeading(FEATURED_CATEGORY_TITLE, FEATURED_CATEGORY_ID),
-            Container(
-              height: 250.0,
-              child: FeaturedCategoryList(),
+    return Scaffold(
+        appBar: AppBar(
+            title: Text('TIGERS TOGETHER', style: TextStyle(color: Theme.of(context).primaryColor),),
+            backgroundColor: Colors.white,
+            leading: Padding(
+              child: Image.asset('assets/images/icon-480.png'),
+              padding: const EdgeInsets.all(8.0),
+            )),
+        body: Container(
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                SizedBox(height: 10),
+                ListHeading(FEATURED_CATEGORY_TITLE, FEATURED_CATEGORY_ID),
+                Container(
+                  height: 250.0,
+                  child: FeaturedCategoryList(),
+                ),
+                ListHeading('Latest', 0),
+                Flexible(
+                  fit: FlexFit.loose,
+                  child: PostsList(),
+                ),
+              ],
             ),
-            ListHeading('Latest', 0),
-            Flexible(
-              fit: FlexFit.loose,
-              child: PostsList(),
-            ),
-          ],
-        ),
-      ),
-    );
+          ),
+        ));
   }
 }
 
@@ -57,10 +66,15 @@ class ListHeading extends StatelessWidget {
           GestureDetector(
             onTap: () {
               PostCategory category = PostCategory(name: title, id: categoryId);
-              Navigator.push(context, MaterialPageRoute(builder: (context) => SingleCategory(category)));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => SingleCategory(category)));
             },
             child: Container(
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.0), color: Theme.of(context).textSelectionColor),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8.0),
+                  color: Colors.yellow[200]),
               padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
               child: Text('Show All'),
             ),

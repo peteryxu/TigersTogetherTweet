@@ -119,10 +119,8 @@ class _HomePageState extends State<HomePage> {
 
   Widget _body() {
     _checkNotification();
-    return SafeArea(
-      child: Container(
-        child: _getPage(Provider.of<AppState>(context).pageIndex),
-      ),
+    return Container(
+      child: _getPage(Provider.of<AppState>(context).pageIndex),
     );
   }
 

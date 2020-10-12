@@ -185,14 +185,14 @@ bool validateCredentials(
   } else if (password == null || password.isEmpty) {
     customSnackBar(_scaffoldKey, 'Please enter password');
     return false;
-  } else if (password.length < 8) {
-    customSnackBar(_scaffoldKey, 'Password must me 8 character long');
+  } else if (password.length < 5) {
+    customSnackBar(_scaffoldKey, 'Password must be 6 characters long');
     return false;
   }
 
   var status = validateEmal(email);
   if (!status) {
-    customSnackBar(_scaffoldKey, 'Please enter valid email id');
+    customSnackBar(_scaffoldKey, 'Please enter a valid email id');
     return false;
   }
   return true;

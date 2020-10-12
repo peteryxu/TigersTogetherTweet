@@ -32,10 +32,17 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Fwitter',
-        theme: AppTheme.apptheme.copyWith(
-          textTheme: GoogleFonts.muliTextTheme(
-            Theme.of(context).textTheme,
+        theme: ThemeData(
+          
+          textTheme: GoogleFonts.openSansTextTheme(
+      Theme.of(context).textTheme,
+    ),
+          primaryColor: Color(0xffFCBE13),
+          iconTheme: IconThemeData(
+color: Theme.of(context).primaryColor
           ),
+         
+          
         ),
         debugShowCheckedModeBanner: false,
         routes: Routes.route(),

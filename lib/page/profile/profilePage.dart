@@ -197,7 +197,7 @@ class _ProfilePageState extends State<ProfilePage>
                                   ),
                                   decoration: BoxDecoration(
                                     color: isFollower()
-                                        ? TwitterColor.dodgetBlue
+                                        ? Theme.of(context).primaryColor
                                         : TwitterColor.white,
                                     border: Border.all(
                                         color: isMyProfile

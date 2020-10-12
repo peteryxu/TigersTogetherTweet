@@ -65,7 +65,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage>{
         border: InputBorder.none,
         focusedBorder: OutlineInputBorder(
            borderRadius: BorderRadius.all(Radius.circular(30.0)),
-              borderSide: BorderSide(color: Colors.blue)),
+              borderSide: BorderSide(color: Theme.of(context).primaryColor)),
         contentPadding:EdgeInsets.symmetric(vertical: 15,horizontal: 10)
       ),
     ),
@@ -77,7 +77,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage>{
       width: MediaQuery.of(context).size.width,
       child: FlatButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-        color: TwitterColor.dodgetBlue,
+        color: Theme.of(context).primaryColor,
         onPressed:_submit,
         padding: EdgeInsets.symmetric(horizontal: 30,vertical: 10),
         child: Text('Submit',style:TextStyle(color: Colors.white)),
@@ -88,7 +88,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage>{
     return Container(
       child:Column(
         children: <Widget>[
-          customText('Forget Password',style:TextStyle(fontSize: 24,fontWeight: FontWeight.bold)),
+          customText('Forget Password?',style:TextStyle(fontSize: 24,fontWeight: FontWeight.bold)),
           SizedBox(height: 15),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),

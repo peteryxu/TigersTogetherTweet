@@ -74,11 +74,14 @@ class _ProfilePageState extends State<ProfilePage>
               ),
       ],
       flexibleSpace: FlexibleSpaceBar(
-        stretchModes: <StretchMode>[StretchMode.zoomBackground, StretchMode.blurBackground],
+        stretchModes: <StretchMode>[
+          StretchMode.zoomBackground,
+          StretchMode.blurBackground
+        ],
         background: authstate.isbusy
             ? SizedBox.shrink()
             : Stack(
-              alignment: Alignment.topCenter,
+                alignment: Alignment.topCenter,
                 children: <Widget>[
                   SizedBox.expand(
                     child: Container(
@@ -92,9 +95,9 @@ class _ProfilePageState extends State<ProfilePage>
                   /// Banner image
                   Container(
                     height: 180,
-                    padding: EdgeInsets.only(top: 28),
+                    padding: EdgeInsets.only(top: 0),
                     child: customNetworkImage(
-                      'https://pbs.twimg.com/profile_banners/457684585/1510495215/1500x500',
+                      'https://png.pngtree.com/thumb_back/fh260/background/20190222/ourmid/pngtree-yellow-gold-gradient-geometric-background-poster-image_49461.jpg',
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -139,8 +142,7 @@ class _ProfilePageState extends State<ProfilePage>
                                       onPressed: () {
                                         if (!isMyProfile) {
                                           final chatState =
-                                              Provider.of<ChatState>(
-                                                  context,
+                                              Provider.of<ChatState>(context,
                                                   listen: false);
                                           chatState.setChatUser =
                                               authstate.profileUserModel;
@@ -161,13 +163,13 @@ class _ProfilePageState extends State<ProfilePage>
                                                 color: isMyProfile
                                                     ? Colors.black87
                                                         .withAlpha(180)
-                                                    : Colors.blue,
+                                                    : Theme.of(context).primaryColor,
                                                 width: 1),
                                             shape: BoxShape.circle),
                                         child: Icon(
                                           IconData(AppIcon.messageEmpty,
                                               fontFamily: 'TwitterIcon'),
-                                          color: Colors.blue,
+                                          color: Theme.of(context).primaryColor,
                                           size: 20,
                                         ),
 
@@ -202,7 +204,7 @@ class _ProfilePageState extends State<ProfilePage>
                                     border: Border.all(
                                         color: isMyProfile
                                             ? Colors.black87.withAlpha(180)
-                                            : Colors.blue,
+                                            : Theme.of(context).primaryColor,
                                         width: 1),
                                     borderRadius: BorderRadius.circular(20),
                                   ),
@@ -212,13 +214,15 @@ class _ProfilePageState extends State<ProfilePage>
                                   child: Text(
                                     isMyProfile
                                         ? 'Edit Profile'
-                                        : isFollower() ? 'Following' : 'Follow',
+                                        : isFollower()
+                                            ? 'Following'
+                                            : 'Follow',
                                     style: TextStyle(
                                       color: isMyProfile
                                           ? Colors.black87.withAlpha(180)
                                           : isFollower()
                                               ? TwitterColor.white
-                                              : Colors.blue,
+                                              : Theme.of(context).primaryColor,
                                       fontSize: 17,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -246,7 +250,7 @@ class _ProfilePageState extends State<ProfilePage>
         context,
         icon: AppIcon.fabTweet,
         istwitterIcon: true,
-        iconColor: Theme.of(context).colorScheme.onPrimary,
+        iconColor: Colors.blue,
         size: 25,
       ),
     );
@@ -491,7 +495,7 @@ class UserNameRowWidget extends StatelessWidget {
                   ? customIcon(context,
                       icon: AppIcon.blueTick,
                       istwitterIcon: true,
-                      iconColor: AppColor.primary,
+                      iconColor: Theme.of(context).primaryColor,
                       size: 13,
                       paddingIcon: 3)
                   : SizedBox(width: 0),
@@ -524,10 +528,10 @@ class UserNameRowWidget extends StatelessWidget {
                   iconColor: AppColor.darkGrey),
               SizedBox(width: 10),
               Expanded(
-                child:customText(
-                user.location,
-                style: TextStyle(color: AppColor.darkGrey),
-              ),
+                child: customText(
+                  user.location,
+                  style: TextStyle(color: AppColor.darkGrey),
+                ),
               )
             ],
           ),

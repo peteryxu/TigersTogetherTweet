@@ -64,7 +64,8 @@ class _CovidPageState extends State<CovidPage> {
           padding: const EdgeInsets.all(8.0),
         ),
         backgroundColor: Colors.white,
-        title: customTitleText('COVID'),
+        title: Text('COVID-19',
+            style: TextStyle(color: Theme.of(context).primaryColor)),
         centerTitle: true,
       ),
       body: Column(
@@ -75,19 +76,20 @@ class _CovidPageState extends State<CovidPage> {
           Center(
             child: SizedBox(
               //height: 400, // card height
-              height: 275, // card height
+              height: 280, // card height
               child: PageView.builder(
                 itemCount: data == null ? 0 : data.length,
-                controller: PageController(viewportFraction: 0.7),
+                controller: PageController(viewportFraction: 0.8),
                 onPageChanged: (int index) => setState(() => _index = index),
                 itemBuilder: (_, i) {
                   return Transform.scale(
-                    scale: i == _index ? 1 : 0.9,
+                    scale: i == _index ? 1 : 0.95,
                     child: Card(
                       color: Colors.white,
-                      elevation: 6,
+                      elevation: 2,
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20)),
+                          side: BorderSide(color: Theme.of(context).primaryColor),
+                          borderRadius: BorderRadius.circular(30)),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -161,10 +163,12 @@ class _CovidPageState extends State<CovidPage> {
             height: 10.0,
           ),
           RaisedButton(
-            color: Colors.yellow[200],
-          
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(18.0),
+                side: BorderSide(color: Theme.of(context).primaryColor)),
+            color: Colors.white,
             onPressed: _launchURL,
-            child: Text('Orange County COVID Resources'),
+            child: Text('Orange County COVID Resources',),
           ),
           SizedBox(
             height: 10.0,

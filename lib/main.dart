@@ -18,7 +18,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -28,21 +27,20 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<FeedState>(create: (_) => FeedState()),
         ChangeNotifierProvider<ChatState>(create: (_) => ChatState()),
         ChangeNotifierProvider<SearchState>(create: (_) => SearchState()),
-        ChangeNotifierProvider<NotificationState>(create: (_) => NotificationState()),
+        ChangeNotifierProvider<NotificationState>(
+            create: (_) => NotificationState()),
       ],
       child: MaterialApp(
         title: 'Fwitter',
         theme: ThemeData(
-          
           textTheme: GoogleFonts.openSansTextTheme(
-      Theme.of(context).textTheme,
-    ),
-          primaryColor: Color(0xffFCBE13),
-          iconTheme: IconThemeData(
-color: Theme.of(context).primaryColor
+            Theme.of(context).textTheme,
           ),
-         
-          
+          primaryColor: Color(0xffFCBE13),
+          accentColor: Color(0xffFCBE13),
+          iconTheme: IconThemeData(
+            color: Theme.of(context).primaryColor,
+          ),
         ),
         debugShowCheckedModeBanner: false,
         routes: Routes.route(),

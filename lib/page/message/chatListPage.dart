@@ -46,7 +46,7 @@ class _ChatListPageState extends State<ChatListPage> {
         ),
       );
     } else {
-      if(searchState.userList.isEmpty){
+      if (searchState.userList.isEmpty) {
         searchState.resetFilterList();
       }
       return ListView.separated(
@@ -129,9 +129,8 @@ class _ChatListPageState extends State<ChatListPage> {
       child: customIcon(
         context,
         icon: AppIcon.newMessage,
-        
         istwitterIcon: true,
-        iconColor: Theme.of(context).colorScheme.onPrimary,
+        iconColor: Colors.black,
         size: 25,
       ),
     );
@@ -158,9 +157,8 @@ class _ChatListPageState extends State<ChatListPage> {
     return Scaffold(
       appBar: CustomAppBar(
         scaffoldKey: widget.scaffoldKey,
-        title: customTitleText(
-          'Messages',
-        ),
+        title: Text('MESSAGES',
+            style: TextStyle(color: Theme.of(context).primaryColor)),
         icon: AppIcon.settings,
         onActionPressed: onSettingIconPressed,
       ),

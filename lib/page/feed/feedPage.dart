@@ -135,7 +135,8 @@ class _FeedPageBody extends StatelessWidget {
         floating: true,
         elevation: 8,
         leading: _getUserAvatar(context),
-        title: customTitleText('Feed'),
+        title: Text('YOUR FEED',
+            style: TextStyle(color: Theme.of(context).primaryColor)),
         iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
         backgroundColor: Colors.white,
         bottom: PreferredSize(

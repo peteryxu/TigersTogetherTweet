@@ -93,7 +93,7 @@ class _UserTile extends StatelessWidget {
                   context,
                   icon: AppIcon.blueTick,
                   istwitterIcon: true,
-                  iconColor: AppColor.primary,
+                  iconColor: Theme.of(context).primaryColor,
                   size: 13,
                   paddingIcon: 3,
                 )

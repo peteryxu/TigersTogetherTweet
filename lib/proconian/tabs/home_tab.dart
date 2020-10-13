@@ -74,7 +74,7 @@ class ListHeading extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8.0),
-                  color: Colors.yellow[200]),
+                  color: Theme.of(context).primaryColor),
               padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
               child: Text('Show All'),
             ),

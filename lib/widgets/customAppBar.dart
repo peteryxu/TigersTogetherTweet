@@ -103,7 +103,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   icon: customIcon(context,
                       icon: icon,
                       istwitterIcon: true,
-                      iconColor: AppColor.primary,
+                      iconColor: Theme.of(context).primaryColor,
                       size: 25),
                 )
     ];

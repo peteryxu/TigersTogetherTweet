@@ -84,13 +84,13 @@ class _FeedPostDetailState extends State<FeedPostDetail> {
       },
       child: Scaffold(
         floatingActionButton: _floatingActionButton(),
-        backgroundColor: Theme.of(context).backgroundColor,
+        backgroundColor: Colors.white,
         body: CustomScrollView(
           slivers: <Widget>[
             SliverAppBar(
               pinned: true,
               title: customTitleText('Thread'),
-              iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
+              iconTheme: IconThemeData(color: Colors.white),
               backgroundColor: Theme.of(context).appBarTheme.color,
               bottom: PreferredSize(
                 child: Container(

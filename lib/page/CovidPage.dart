@@ -12,7 +12,7 @@ import 'dart:async';
 // Orange county: https://www.orangecountync.gov/2332/Coronavirus-COVID-19
 // UNC Carolina Together: https://carolinatogether.unc.edu/dashboard/
 
-// ignore: must_be_immutable
+
 class CovidPage extends StatefulWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
 
@@ -94,7 +94,7 @@ class _CovidPageState extends State<CovidPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
-                          new Text(
+                          Text(
                             data[_index]["country"],
                             style: TextStyle(fontSize: 25, color: Theme.of(context).primaryColor),
                             textAlign: TextAlign.center,

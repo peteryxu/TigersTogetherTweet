@@ -327,8 +327,8 @@ class _ProfilePageState extends State<ProfilePage>
                         indicator: TabIndicator(),
                         controller: _tabController,
                         tabs: <Widget>[
-                          Text("Tweets"),
-                          Text("Tweets & replies"),
+                          Text("Posts"),
+                          Text("Posts & replies"),
                           Text("Media")
                         ],
                       ),

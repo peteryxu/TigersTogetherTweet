@@ -29,7 +29,7 @@ class _BottomMenubarState extends State<BottomMenubar> {
       context,
     );
     return Container(
-      height: 60,
+      height: 70,
       decoration:
           BoxDecoration(color: Theme.of(context).bottomAppBarColor, boxShadow: [
         BoxShadow(color: Colors.black26, offset: Offset(0, -0.5), blurRadius: 0)

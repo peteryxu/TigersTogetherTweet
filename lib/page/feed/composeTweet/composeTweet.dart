@@ -204,7 +204,7 @@ class _ComposeTweetReplyPageState extends State<ComposeTweetPage> {
                 Provider.of<FeedState>(context).isBusy,
         isbootomLine: Provider.of<ComposeTweetState>(context).isScrollingDown,
       ),
-      backgroundColor: Theme.of(context).backgroundColor,
+      backgroundColor: Colors.white,
       body: Container(
         child: Stack(
           children: <Widget>[
@@ -269,7 +269,7 @@ class _ComposeRetweet
                           context,
                           icon: AppIcon.blueTick,
                           istwitterIcon: true,
-                          iconColor: AppColor.primary,
+                          iconColor: Theme.of(context).primaryColor,
                           size: 13,
                           paddingIcon: 3,
                         )
@@ -298,7 +298,7 @@ class _ComposeRetweet
             fontSize: 14,
             fontWeight: FontWeight.w400,
           ),
-          urlStyle: TextStyle(color: Colors.blue, fontWeight: FontWeight.w400),
+          urlStyle: TextStyle(color: Theme.of(context).primaryColor, fontWeight: FontWeight.w400),
         ),
       ],
     );
@@ -407,7 +407,7 @@ class _ComposeTweet
                       ),
                       urlStyle: TextStyle(
                         fontSize: 16,
-                        color: Colors.blue,
+                        color: Theme.of(context).primaryColor,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
@@ -417,7 +417,7 @@ class _ComposeTweet
                     text:
                         'Replying to ${viewState.model.user.userName ?? viewState.model.user.displayName}',
                     style: TextStyle(
-                      color: TwitterColor.paleSky,
+                      color: Colors.yellow[200],
                       fontSize: 13,
                     ),
                   ),
@@ -445,7 +445,7 @@ class _ComposeTweet
                         context,
                         icon: AppIcon.blueTick,
                         istwitterIcon: true,
-                        iconColor: AppColor.primary,
+                        iconColor: Theme.of(context).primaryColor,
                         size: 13,
                         paddingIcon: 3,
                       )
@@ -541,7 +541,7 @@ class _TextField extends StatelessWidget {
               fillColor: Colors.red,
               border: InputBorder.none,
               hintText: isTweet
-                  ? 'What\'s happening?'
+                  ? 'Type What\'s happening?'
                   : isRetweet
                       ? 'Add a comment'
                       : 'Tweet your reply',
@@ -619,7 +619,7 @@ class _UserTile extends StatelessWidget {
                   context,
                   icon: AppIcon.blueTick,
                   istwitterIcon: true,
-                  iconColor: AppColor.primary,
+                  iconColor: Theme.of(context).primaryColor,
                   size: 13,
                   paddingIcon: 3,
                 )

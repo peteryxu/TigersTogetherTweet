@@ -110,7 +110,7 @@ class _ChatScreenPageState extends State<ChatScreenPage> {
                       decoration: BoxDecoration(
                         borderRadius: getBorder(myMessage),
                         color: myMessage
-                            ? TwitterColor.dodgetBlue
+                            ? Theme.of(context).primaryColor
                             : TwitterColor.mystic,
                       ),
                       child: UrlText(
@@ -123,7 +123,7 @@ class _ChatScreenPageState extends State<ChatScreenPage> {
                           fontSize: 16,
                           color: myMessage
                               ? TwitterColor.white
-                              : TwitterColor.dodgetBlue,
+                              : Theme.of(context).primaryColor,
                           decoration: TextDecoration.underline,
                         ),
                       ),

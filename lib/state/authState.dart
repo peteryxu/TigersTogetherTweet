@@ -117,6 +117,19 @@ class AuthState extends AppState {
       );
 
       user = (await _firebaseAuth.signInWithCredential(credential)).user;
+
+      final email = user.email;
+
+      if (!email.contains('chccs.k12.nc.us') || !email.contains('we-sense.org')|| !email.contains('hitechhandymen.com')) {
+        print("##### This email is NOT part of chapel hill school district/we-sense/hightech, signing out");
+        await signOut();
+        throw new Exception('Need to log in with school email: chccs.k12.nc.us');
+      } else {
+        //try to create User Profile in the firestore
+        print("##### This email is  part of chapel hill school district");
+      }
+
+
       authStatus = AuthStatus.LOGGED_IN;
       userId = user.uid;
       isSignInWithGoogle = true;
@@ -471,4 +484,14 @@ class AuthState extends AppState {
       notifyListeners();
     }
   }
+
+  Future<void> signOut() async {
+    final GoogleSignIn googleSignIn = GoogleSignIn();
+    await googleSignIn.signOut();
+    //final FacebookLogin facebookLogin = FacebookLogin();
+    //await facebookLogin.logOut();
+    return _firebaseAuth.signOut();
+  }
+
+
 }

@@ -86,6 +86,7 @@ class _SignInState extends State<SignIn> {
       ),
       child: TextField(
         controller: controller,
+        autofocus: true,
         keyboardType: TextInputType.emailAddress,
         style: TextStyle(
           fontStyle: FontStyle.normal,

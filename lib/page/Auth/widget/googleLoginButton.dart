@@ -27,7 +27,7 @@ class GoogleLoginButton extends StatelessWidget {
       } else {
         print("@@@@@@In GoogleLoginButton 4");
         loader.hideLoader();
-        cprint('Unable to login', errorIn: '_googleLoginButton');
+        cprint('Make sure to use your school email', errorIn: '_googleLoginButton');
       }
     });
   }

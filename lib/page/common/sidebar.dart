@@ -228,7 +228,7 @@ class _SidebarMenuState extends State<SidebarMenu> {
                   ),
                   Divider(),
                   _menuListRowButton('Profile',
-                      icon: AppIcon.profile, isEnable: true, onPressed: () {
+                      icon: AppIcon.profile, isEnable: false, onPressed: () {
                     _navigateTo('ProfilePage');
                   }),
                   _menuListRowButton('Lists', icon: AppIcon.lists),

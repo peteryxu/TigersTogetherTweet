@@ -4,8 +4,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_twitter_clone/helper/constant.dart';
-import 'package:flutter_twitter_clone/helper/theme.dart';
+import 'package:tigerstogether/helper/constant.dart';
+import 'package:tigerstogether/helper/theme.dart';
 import 'package:image_picker/image_picker.dart';
 
 Widget customTitleText(String title, {BuildContext context}) {
@@ -72,7 +72,9 @@ Widget customIcon(
               ? 'TwitterIcon'
               : isFontAwesomeRegular
                   ? 'AwesomeRegular'
-                  : isFontAwesomeSolid ? 'AwesomeSolid' : 'Fontello'),
+                  : isFontAwesomeSolid
+                      ? 'AwesomeSolid'
+                      : 'Fontello'),
       size: size,
       color: isEnable ? Theme.of(context).primaryColor : iconColor,
     ),

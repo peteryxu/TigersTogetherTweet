@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_twitter_clone/helper/utility.dart';
-import 'package:flutter_twitter_clone/state/authState.dart';
-import 'package:flutter_twitter_clone/widgets/newWidget/customLoader.dart';
-import 'package:flutter_twitter_clone/widgets/newWidget/rippleButton.dart';
-import 'package:flutter_twitter_clone/widgets/newWidget/title_text.dart';
+import 'package:tigerstogether/helper/utility.dart';
+import 'package:tigerstogether/state/authState.dart';
+import 'package:tigerstogether/widgets/newWidget/customLoader.dart';
+import 'package:tigerstogether/widgets/newWidget/rippleButton.dart';
+import 'package:tigerstogether/widgets/newWidget/title_text.dart';
 import 'package:provider/provider.dart';
 
 class GoogleLoginButton extends StatelessWidget {
@@ -27,7 +27,8 @@ class GoogleLoginButton extends StatelessWidget {
       } else {
         print("@@@@@@In GoogleLoginButton 4");
         loader.hideLoader();
-        cprint('Make sure to use your school email', errorIn: '_googleLoginButton');
+        cprint('Make sure to use your school email',
+            errorIn: '_googleLoginButton');
       }
     });
   }

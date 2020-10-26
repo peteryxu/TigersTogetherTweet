@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_twitter_clone/widgets/customWidgets.dart';
+import 'package:tigerstogether/widgets/customWidgets.dart';
 
 import '../config.dart';
 import '../model/post_entity.dart';

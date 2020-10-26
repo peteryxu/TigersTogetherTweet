@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_twitter_clone/helper/theme.dart';
+import 'package:tigerstogether/helper/theme.dart';
 
 class TabIndicator extends Decoration {
   final BoxPainter _painter;

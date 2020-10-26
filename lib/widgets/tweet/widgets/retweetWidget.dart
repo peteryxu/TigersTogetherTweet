@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_twitter_clone/helper/constant.dart';
-import 'package:flutter_twitter_clone/helper/enum.dart';
-import 'package:flutter_twitter_clone/helper/theme.dart';
-import 'package:flutter_twitter_clone/helper/utility.dart';
-import 'package:flutter_twitter_clone/model/feedModel.dart';
-import 'package:flutter_twitter_clone/state/feedState.dart';
-import 'package:flutter_twitter_clone/widgets/customWidgets.dart';
-import 'package:flutter_twitter_clone/widgets/newWidget/customUrlText.dart';
-import 'package:flutter_twitter_clone/widgets/newWidget/rippleButton.dart';
-import 'package:flutter_twitter_clone/widgets/newWidget/title_text.dart';
-import 'package:flutter_twitter_clone/widgets/tweet/widgets/tweetImage.dart';
-import 'package:flutter_twitter_clone/widgets/tweet/widgets/unavailableTweet.dart';
+import 'package:tigerstogether/helper/constant.dart';
+import 'package:tigerstogether/helper/enum.dart';
+import 'package:tigerstogether/helper/theme.dart';
+import 'package:tigerstogether/helper/utility.dart';
+import 'package:tigerstogether/model/feedModel.dart';
+import 'package:tigerstogether/state/feedState.dart';
+import 'package:tigerstogether/widgets/customWidgets.dart';
+import 'package:tigerstogether/widgets/newWidget/customUrlText.dart';
+import 'package:tigerstogether/widgets/newWidget/rippleButton.dart';
+import 'package:tigerstogether/widgets/newWidget/title_text.dart';
+import 'package:tigerstogether/widgets/tweet/widgets/tweetImage.dart';
+import 'package:tigerstogether/widgets/tweet/widgets/unavailableTweet.dart';
 import 'package:provider/provider.dart';
 
 class RetweetWidget extends StatelessWidget {

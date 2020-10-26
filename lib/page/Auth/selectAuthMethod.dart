@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_twitter_clone/helper/enum.dart';
-import 'package:flutter_twitter_clone/helper/theme.dart';
-import 'package:flutter_twitter_clone/page/Auth/signup.dart';
-import 'package:flutter_twitter_clone/state/authState.dart';
-import 'package:flutter_twitter_clone/widgets/customWidgets.dart';
-import 'package:flutter_twitter_clone/widgets/newWidget/title_text.dart';
+import 'package:tigerstogether/helper/enum.dart';
+import 'package:tigerstogether/helper/theme.dart';
+import 'package:tigerstogether/page/Auth/signup.dart';
+import 'package:tigerstogether/state/authState.dart';
+import 'package:tigerstogether/widgets/customWidgets.dart';
+import 'package:tigerstogether/widgets/newWidget/title_text.dart';
 import 'package:provider/provider.dart';
 import '../homePage.dart';
 import 'signin.dart';
@@ -54,14 +54,13 @@ class _WelcomePageState extends State<WelcomePage> {
               child: Image.asset('assets/images/icon-480.png'),
             ),
             SizedBox(height: 10),
-             Center(
-               child: TitleText(
+            Center(
+              child: TitleText(
                 'Tigers Together',
                 fontSize: 30,
+              ),
             ),
-             ),
             Spacer(),
-            
             TitleText(
               'See what\'s happening at CHHS right now.',
               fontSize: 25,

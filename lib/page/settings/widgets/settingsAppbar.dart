@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_twitter_clone/helper/theme.dart';
-import 'package:flutter_twitter_clone/widgets/customWidgets.dart';
+import 'package:tigerstogether/helper/theme.dart';
+import 'package:tigerstogether/widgets/customWidgets.dart';
 
 class SettingsAppBar extends StatelessWidget implements PreferredSizeWidget {
   SettingsAppBar({Key key, this.title, this.subtitle}) : super(key: key);

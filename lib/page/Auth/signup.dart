@@ -1,16 +1,16 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_twitter_clone/helper/constant.dart';
-import 'package:flutter_twitter_clone/helper/enum.dart';
-import 'package:flutter_twitter_clone/helper/theme.dart';
-import 'package:flutter_twitter_clone/helper/utility.dart';
-import 'package:flutter_twitter_clone/model/user.dart';
-import 'package:flutter_twitter_clone/page/Auth/widget/googleLoginButton.dart';
-import 'package:flutter_twitter_clone/state/authState.dart';
-import 'package:flutter_twitter_clone/widgets/customWidgets.dart';
-import 'package:flutter_twitter_clone/widgets/newWidget/customLoader.dart';
-import 'package:flutter_twitter_clone/widgets/newWidget/title_text.dart';
+import 'package:tigerstogether/helper/constant.dart';
+import 'package:tigerstogether/helper/enum.dart';
+import 'package:tigerstogether/helper/theme.dart';
+import 'package:tigerstogether/helper/utility.dart';
+import 'package:tigerstogether/model/user.dart';
+import 'package:tigerstogether/page/Auth/widget/googleLoginButton.dart';
+import 'package:tigerstogether/state/authState.dart';
+import 'package:tigerstogether/widgets/customWidgets.dart';
+import 'package:tigerstogether/widgets/newWidget/customLoader.dart';
+import 'package:tigerstogether/widgets/newWidget/title_text.dart';
 import 'package:provider/provider.dart';
 
 class Signup extends StatefulWidget {

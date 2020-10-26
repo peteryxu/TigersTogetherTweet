@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_twitter_clone/helper/theme.dart';
-import 'package:flutter_twitter_clone/helper/utility.dart';
-import 'package:flutter_twitter_clone/page/Auth/widget/googleLoginButton.dart';
-import 'package:flutter_twitter_clone/state/authState.dart';
-import 'package:flutter_twitter_clone/widgets/customWidgets.dart';
-import 'package:flutter_twitter_clone/widgets/newWidget/customLoader.dart';
-import 'package:flutter_twitter_clone/widgets/newWidget/title_text.dart';
+import 'package:tigerstogether/helper/theme.dart';
+import 'package:tigerstogether/helper/utility.dart';
+import 'package:tigerstogether/page/Auth/widget/googleLoginButton.dart';
+import 'package:tigerstogether/state/authState.dart';
+import 'package:tigerstogether/widgets/customWidgets.dart';
+import 'package:tigerstogether/widgets/newWidget/customLoader.dart';
+import 'package:tigerstogether/widgets/newWidget/title_text.dart';
 import 'package:provider/provider.dart';
 
 class SignIn extends StatefulWidget {
@@ -44,8 +44,7 @@ class _SignInState extends State<SignIn> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-
-           /* SizedBox(height: 50),
+            /* SizedBox(height: 50),
             GoogleLoginButton(
               loginCallback: widget.loginCallback,
               loader: loader,
@@ -64,8 +63,6 @@ class _SignInState extends State<SignIn> {
             ),
             SizedBox(height: 15),
             Divider(height: 30),
-
-
             SizedBox(height: 15),
             TitleText(
               'Parents and Others',
@@ -87,7 +84,6 @@ class _SignInState extends State<SignIn> {
             SizedBox(
               height: 10,
             ),
-            
           ],
         ),
       ),

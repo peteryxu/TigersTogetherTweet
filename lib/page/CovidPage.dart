@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_twitter_clone/widgets/customWidgets.dart';
+import 'package:tigerstogether/widgets/customWidgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'package:http/http.dart' as http;
@@ -11,7 +11,6 @@ import 'dart:async';
 // getting latest info for WHO, and help
 // Orange county: https://www.orangecountync.gov/2332/Coronavirus-COVID-19
 // UNC Carolina Together: https://carolinatogether.unc.edu/dashboard/
-
 
 class CovidPage extends StatefulWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
@@ -88,7 +87,8 @@ class _CovidPageState extends State<CovidPage> {
                       color: Colors.white,
                       elevation: 2,
                       shape: RoundedRectangleBorder(
-                          side: BorderSide(color: Theme.of(context).primaryColor),
+                          side:
+                              BorderSide(color: Theme.of(context).primaryColor),
                           borderRadius: BorderRadius.circular(30)),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -96,7 +96,9 @@ class _CovidPageState extends State<CovidPage> {
                         children: <Widget>[
                           Text(
                             data[_index]["country"],
-                            style: TextStyle(fontSize: 25, color: Theme.of(context).primaryColor),
+                            style: TextStyle(
+                                fontSize: 25,
+                                color: Theme.of(context).primaryColor),
                             textAlign: TextAlign.center,
                           ),
                           SizedBox(
@@ -168,7 +170,9 @@ class _CovidPageState extends State<CovidPage> {
                 side: BorderSide(color: Theme.of(context).primaryColor)),
             color: Colors.white,
             onPressed: _launchURL,
-            child: Text('Orange County COVID Resources',),
+            child: Text(
+              'Orange County COVID Resources',
+            ),
           ),
           SizedBox(
             height: 10.0,

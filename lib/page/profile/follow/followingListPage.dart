@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_twitter_clone/helper/constant.dart';
-import 'package:flutter_twitter_clone/page/common/usersListPage.dart';
-import 'package:flutter_twitter_clone/state/authState.dart';
+import 'package:tigerstogether/helper/constant.dart';
+import 'package:tigerstogether/page/common/usersListPage.dart';
+import 'package:tigerstogether/state/authState.dart';
 import 'package:provider/provider.dart';
 
 class FollowingListPage extends StatelessWidget {

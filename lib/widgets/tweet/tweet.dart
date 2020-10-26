@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_twitter_clone/helper/constant.dart';
-import 'package:flutter_twitter_clone/helper/enum.dart';
-import 'package:flutter_twitter_clone/helper/theme.dart';
-import 'package:flutter_twitter_clone/helper/utility.dart';
-import 'package:flutter_twitter_clone/model/feedModel.dart';
-import 'package:flutter_twitter_clone/state/feedState.dart';
-import 'package:flutter_twitter_clone/widgets/newWidget/customUrlText.dart';
-import 'package:flutter_twitter_clone/widgets/newWidget/title_text.dart';
-import 'package:flutter_twitter_clone/widgets/tweet/widgets/parentTweet.dart';
-import 'package:flutter_twitter_clone/widgets/tweet/widgets/tweetIconsRow.dart';
+import 'package:tigerstogether/helper/constant.dart';
+import 'package:tigerstogether/helper/enum.dart';
+import 'package:tigerstogether/helper/theme.dart';
+import 'package:tigerstogether/helper/utility.dart';
+import 'package:tigerstogether/model/feedModel.dart';
+import 'package:tigerstogether/state/feedState.dart';
+import 'package:tigerstogether/widgets/newWidget/customUrlText.dart';
+import 'package:tigerstogether/widgets/newWidget/title_text.dart';
+import 'package:tigerstogether/widgets/tweet/widgets/parentTweet.dart';
+import 'package:tigerstogether/widgets/tweet/widgets/tweetIconsRow.dart';
 import 'package:provider/provider.dart';
 
 import '../customWidgets.dart';
@@ -158,7 +158,9 @@ class _TweetBody extends StatelessWidget {
   Widget build(BuildContext context) {
     double descriptionFontSize = type == TweetType.Tweet
         ? 15
-        : type == TweetType.Detail || type == TweetType.ParentTweet ? 18 : 14;
+        : type == TweetType.Detail || type == TweetType.ParentTweet
+            ? 18
+            : 14;
     FontWeight descriptionFontWeight =
         type == TweetType.Tweet || type == TweetType.Tweet
             ? FontWeight.w400
@@ -270,7 +272,9 @@ class _TweetDetailBody extends StatelessWidget {
         ? getDimention(context, 15)
         : type == TweetType.Detail
             ? getDimention(context, 18)
-            : type == TweetType.ParentTweet ? getDimention(context, 14) : 10;
+            : type == TweetType.ParentTweet
+                ? getDimention(context, 14)
+                : 10;
 
     FontWeight descriptionFontWeight =
         type == TweetType.Tweet || type == TweetType.Tweet

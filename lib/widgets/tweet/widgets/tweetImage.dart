@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_twitter_clone/helper/enum.dart';
-import 'package:flutter_twitter_clone/model/feedModel.dart';
-import 'package:flutter_twitter_clone/state/feedState.dart';
-import 'package:flutter_twitter_clone/widgets/customWidgets.dart';
+import 'package:tigerstogether/helper/enum.dart';
+import 'package:tigerstogether/model/feedModel.dart';
+import 'package:tigerstogether/state/feedState.dart';
+import 'package:tigerstogether/widgets/customWidgets.dart';
 import 'package:provider/provider.dart';
 
 class TweetImage extends StatelessWidget {
@@ -30,7 +30,7 @@ class TweetImage extends StatelessWidget {
                   Radius.circular(isRetweetImage ? 0 : 20),
                 ),
                 onTap: () {
-                  if(type == TweetType.ParentTweet){
+                  if (type == TweetType.ParentTweet) {
                     return;
                   }
                   var state = Provider.of<FeedState>(context, listen: false);

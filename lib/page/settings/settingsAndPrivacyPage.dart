@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_twitter_clone/helper/theme.dart';
-import 'package:flutter_twitter_clone/model/user.dart';
-import 'package:flutter_twitter_clone/page/settings/widgets/headerWidget.dart';
-import 'package:flutter_twitter_clone/state/authState.dart';
-import 'package:flutter_twitter_clone/widgets/customAppBar.dart';
-import 'package:flutter_twitter_clone/widgets/customWidgets.dart';
-import 'package:flutter_twitter_clone/widgets/newWidget/customUrlText.dart';
+import 'package:tigerstogether/helper/theme.dart';
+import 'package:tigerstogether/model/user.dart';
+import 'package:tigerstogether/page/settings/widgets/headerWidget.dart';
+import 'package:tigerstogether/state/authState.dart';
+import 'package:tigerstogether/widgets/customAppBar.dart';
+import 'package:tigerstogether/widgets/customWidgets.dart';
+import 'package:tigerstogether/widgets/newWidget/customUrlText.dart';
 import 'package:provider/provider.dart';
 import 'widgets/settingsRowWidget.dart';
 

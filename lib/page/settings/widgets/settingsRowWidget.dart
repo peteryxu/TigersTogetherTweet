@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_twitter_clone/helper/theme.dart';
-import 'package:flutter_twitter_clone/widgets/newWidget/customCheckBox.dart';
-import 'package:flutter_twitter_clone/widgets/newWidget/customUrlText.dart';
+import 'package:tigerstogether/helper/theme.dart';
+import 'package:tigerstogether/widgets/newWidget/customCheckBox.dart';
+import 'package:tigerstogether/widgets/newWidget/customUrlText.dart';
 import 'package:provider/provider.dart';
 
 class SettingRowWidget extends StatelessWidget {
@@ -14,8 +14,8 @@ class SettingRowWidget extends StatelessWidget {
     this.onPressed,
     this.vPadding = 0,
     this.showDivider = true,
-    this.visibleSwitch ,
-    this.showCheckBox ,
+    this.visibleSwitch,
+    this.showCheckBox,
   }) : super(key: key);
   final bool visibleSwitch, showDivider, showCheckBox;
   final String navigateTo;
@@ -29,37 +29,38 @@ class SettingRowWidget extends StatelessWidget {
     return Column(
       children: <Widget>[
         ListTile(
-          contentPadding:
-              EdgeInsets.symmetric(vertical: vPadding, horizontal: 18),
-          onTap: () {
-            if (onPressed != null) {
-              onPressed();
-              return;
-            }
-            if (navigateTo == null) {
-              return;
-            }
-            Navigator.pushNamed(context, '/$navigateTo');
-          },
-          title: title == null
-              ? null
-              : UrlText(
-                  text: title ?? '',
-                  style: TextStyle(fontSize: 16, color: textColor),
-                ),
-          subtitle: subtitle == null
-              ? null
-              : UrlText(
-                  text: subtitle,
-                  style: TextStyle(
-                      color: TwitterColor.paleSky, fontWeight: FontWeight.w400),
-                ),
-          trailing: CustomCheckBox(isChecked:showCheckBox,visibleSwitch: visibleSwitch, )
-              
-        ),
+            contentPadding:
+                EdgeInsets.symmetric(vertical: vPadding, horizontal: 18),
+            onTap: () {
+              if (onPressed != null) {
+                onPressed();
+                return;
+              }
+              if (navigateTo == null) {
+                return;
+              }
+              Navigator.pushNamed(context, '/$navigateTo');
+            },
+            title: title == null
+                ? null
+                : UrlText(
+                    text: title ?? '',
+                    style: TextStyle(fontSize: 16, color: textColor),
+                  ),
+            subtitle: subtitle == null
+                ? null
+                : UrlText(
+                    text: subtitle,
+                    style: TextStyle(
+                        color: TwitterColor.paleSky,
+                        fontWeight: FontWeight.w400),
+                  ),
+            trailing: CustomCheckBox(
+              isChecked: showCheckBox,
+              visibleSwitch: visibleSwitch,
+            )),
         !showDivider ? SizedBox() : Divider(height: 0)
       ],
     );
   }
 }
-

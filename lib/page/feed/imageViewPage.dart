@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_twitter_clone/helper/constant.dart';
-import 'package:flutter_twitter_clone/helper/utility.dart';
-import 'package:flutter_twitter_clone/model/feedModel.dart';
-import 'package:flutter_twitter_clone/model/user.dart';
-import 'package:flutter_twitter_clone/state/authState.dart';
-import 'package:flutter_twitter_clone/state/feedState.dart';
-import 'package:flutter_twitter_clone/widgets/customWidgets.dart';
-import 'package:flutter_twitter_clone/widgets/tweet/widgets/tweetIconsRow.dart';
+import 'package:tigerstogether/helper/constant.dart';
+import 'package:tigerstogether/helper/utility.dart';
+import 'package:tigerstogether/model/feedModel.dart';
+import 'package:tigerstogether/model/user.dart';
+import 'package:tigerstogether/state/authState.dart';
+import 'package:tigerstogether/state/feedState.dart';
+import 'package:tigerstogether/widgets/customWidgets.dart';
+import 'package:tigerstogether/widgets/tweet/widgets/tweetIconsRow.dart';
 import 'package:provider/provider.dart';
 
 class ImageViewPge extends StatefulWidget {
@@ -149,8 +149,8 @@ class _ImageViewPgeState extends State<ImageViewPge> {
   }
 
   void addLikeToTweet() {
-    var state = Provider.of<FeedState>(context,listen: false);
-    var authState = Provider.of<AuthState>(context,listen: false);
+    var state = Provider.of<FeedState>(context, listen: false);
+    var authState = Provider.of<AuthState>(context, listen: false);
     state.addLikeToTweet(state.tweetDetailModel.last, authState.userId);
   }
 
@@ -162,8 +162,8 @@ class _ImageViewPgeState extends State<ImageViewPge> {
     if (_textEditingController.text.length > 280) {
       return;
     }
-    var state = Provider.of<FeedState>(context,listen: false);
-    var authState = Provider.of<AuthState>(context,listen: false);
+    var state = Provider.of<FeedState>(context, listen: false);
+    var authState = Provider.of<AuthState>(context, listen: false);
     var user = authState.userModel;
     var profilePic = user.profilePic;
     if (profilePic == null) {

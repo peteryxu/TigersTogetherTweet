@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_twitter_clone/helper/constant.dart';
-import 'package:flutter_twitter_clone/helper/enum.dart';
-import 'package:flutter_twitter_clone/helper/utility.dart';
-import 'package:flutter_twitter_clone/helper/theme.dart';
-import 'package:flutter_twitter_clone/model/feedModel.dart';
-import 'package:flutter_twitter_clone/model/user.dart';
-import 'package:flutter_twitter_clone/page/profile/widgets/tabPainter.dart';
-import 'package:flutter_twitter_clone/state/authState.dart';
-import 'package:flutter_twitter_clone/state/chats/chatState.dart';
-import 'package:flutter_twitter_clone/state/feedState.dart';
-import 'package:flutter_twitter_clone/widgets/customWidgets.dart';
-import 'package:flutter_twitter_clone/widgets/newWidget/customLoader.dart';
-import 'package:flutter_twitter_clone/widgets/newWidget/customUrlText.dart';
-import 'package:flutter_twitter_clone/widgets/newWidget/emptyList.dart';
-import 'package:flutter_twitter_clone/widgets/newWidget/rippleButton.dart';
-import 'package:flutter_twitter_clone/widgets/tweet/tweet.dart';
-import 'package:flutter_twitter_clone/widgets/tweet/widgets/tweetBottomSheet.dart';
+import 'package:tigerstogether/helper/constant.dart';
+import 'package:tigerstogether/helper/enum.dart';
+import 'package:tigerstogether/helper/utility.dart';
+import 'package:tigerstogether/helper/theme.dart';
+import 'package:tigerstogether/model/feedModel.dart';
+import 'package:tigerstogether/model/user.dart';
+import 'package:tigerstogether/page/profile/widgets/tabPainter.dart';
+import 'package:tigerstogether/state/authState.dart';
+import 'package:tigerstogether/state/chats/chatState.dart';
+import 'package:tigerstogether/state/feedState.dart';
+import 'package:tigerstogether/widgets/customWidgets.dart';
+import 'package:tigerstogether/widgets/newWidget/customLoader.dart';
+import 'package:tigerstogether/widgets/newWidget/customUrlText.dart';
+import 'package:tigerstogether/widgets/newWidget/emptyList.dart';
+import 'package:tigerstogether/widgets/newWidget/rippleButton.dart';
+import 'package:tigerstogether/widgets/tweet/tweet.dart';
+import 'package:tigerstogether/widgets/tweet/widgets/tweetBottomSheet.dart';
 import 'package:provider/provider.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -163,7 +163,8 @@ class _ProfilePageState extends State<ProfilePage>
                                                 color: isMyProfile
                                                     ? Colors.black87
                                                         .withAlpha(180)
-                                                    : Theme.of(context).primaryColor,
+                                                    : Theme.of(context)
+                                                        .primaryColor,
                                                 width: 1),
                                             shape: BoxShape.circle),
                                         child: Icon(

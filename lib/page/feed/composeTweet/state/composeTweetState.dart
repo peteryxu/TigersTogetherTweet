@@ -1,12 +1,12 @@
 import 'dart:convert';
-import 'package:flutter_twitter_clone/helper/utility.dart';
-import 'package:flutter_twitter_clone/model/user.dart';
+import 'package:tigerstogether/helper/utility.dart';
+import 'package:tigerstogether/model/user.dart';
 import 'package:http/http.dart' as http;
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_twitter_clone/helper/enum.dart';
-import 'package:flutter_twitter_clone/model/feedModel.dart';
-import 'package:flutter_twitter_clone/state/searchState.dart';
+import 'package:tigerstogether/helper/enum.dart';
+import 'package:tigerstogether/model/feedModel.dart';
+import 'package:tigerstogether/state/searchState.dart';
 
 class ComposeTweetState extends ChangeNotifier {
   bool showUserList = false;
@@ -113,7 +113,7 @@ class ComposeTweetState extends ChangeNotifier {
   /// For package detail check:-  https://pub.dev/packages/firebase_remote_config#-readme-tab-
   Future<Null> getFCMServerKey() async {
     /// If FCM server key is already fetched then no need to fetch it again.
-    if(serverToken != null && serverToken.isNotEmpty){
+    if (serverToken != null && serverToken.isNotEmpty) {
       return Future.value(null);
     }
     final RemoteConfig remoteConfig = await RemoteConfig.instance;
@@ -124,17 +124,19 @@ class ComposeTweetState extends ChangeNotifier {
       serverToken = jsonDecode(data)["key"];
     }
   }
-   /// Fecth FCM server key from firebase Remote config
+
+  /// Fecth FCM server key from firebase Remote config
   /// send notification to user once fcmToken is retrieved from firebase
   Future<void> sendNotification(FeedModel model, SearchState state) async {
     final usernameRegex = r"(@\w*[a-zA-Z1-9])";
     RegExp regExp = new RegExp(usernameRegex);
     var status = regExp.hasMatch(description);
+
     /// Check if username is availeble in description or not
     if (status) {
       /// Get FCM server key from firebase remote config
       getFCMServerKey().then((val) async {
-        /// Reset userlist 
+        /// Reset userlist
         state.filterByUsername("");
 
         /// Search all username from description

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_twitter_clone/helper/constant.dart';
-import 'package:flutter_twitter_clone/helper/customRoute.dart';
-import 'package:flutter_twitter_clone/helper/enum.dart';
-import 'package:flutter_twitter_clone/helper/theme.dart';
-import 'package:flutter_twitter_clone/helper/utility.dart';
-import 'package:flutter_twitter_clone/model/feedModel.dart';
-import 'package:flutter_twitter_clone/page/common/usersListPage.dart';
-import 'package:flutter_twitter_clone/state/authState.dart';
-import 'package:flutter_twitter_clone/state/feedState.dart';
-import 'package:flutter_twitter_clone/widgets/customWidgets.dart';
-import 'package:flutter_twitter_clone/widgets/tweet/widgets/tweetBottomSheet.dart';
+import 'package:tigerstogether/helper/constant.dart';
+import 'package:tigerstogether/helper/customRoute.dart';
+import 'package:tigerstogether/helper/enum.dart';
+import 'package:tigerstogether/helper/theme.dart';
+import 'package:tigerstogether/helper/utility.dart';
+import 'package:tigerstogether/model/feedModel.dart';
+import 'package:tigerstogether/page/common/usersListPage.dart';
+import 'package:tigerstogether/state/authState.dart';
+import 'package:tigerstogether/state/feedState.dart';
+import 'package:tigerstogether/widgets/customWidgets.dart';
+import 'package:tigerstogether/widgets/tweet/widgets/tweetBottomSheet.dart';
 import 'package:provider/provider.dart';
 
 class TweetIconsRow extends StatelessWidget {
@@ -144,7 +144,8 @@ class TweetIconsRow extends StatelessWidget {
   }
 
   Widget _likeCommentWidget(BuildContext context) {
-    bool isLikeAvailable = model.likeCount != null ?  model.likeCount > 0 : false;
+    bool isLikeAvailable =
+        model.likeCount != null ? model.likeCount > 0 : false;
     bool isRetweetAvailable = model.retweetCount > 0;
     bool isLikeRetweetAvailable = isRetweetAvailable || isLikeAvailable;
     return Column(
@@ -231,7 +232,8 @@ class TweetIconsRow extends StatelessWidget {
           pageTitle: "Liked by",
           userIdsList: model.likeList.map((userId) => userId).toList(),
           emptyScreenText: "This tweet has no like yet",
-          emptyScreenSubTileText: "Once a user likes this tweet, user list will be shown here",
+          emptyScreenSubTileText:
+              "Once a user likes this tweet, user list will be shown here",
         ),
       ),
     );

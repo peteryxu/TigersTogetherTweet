@@ -4,14 +4,14 @@ import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_twitter_clone/helper/enum.dart';
-import 'package:flutter_twitter_clone/helper/theme.dart';
-import 'package:flutter_twitter_clone/helper/utility.dart';
-import 'package:flutter_twitter_clone/page/Auth/selectAuthMethod.dart';
-import 'package:flutter_twitter_clone/page/common/updateApp.dart';
-import 'package:flutter_twitter_clone/page/homePage.dart';
-import 'package:flutter_twitter_clone/state/authState.dart';
-import 'package:flutter_twitter_clone/widgets/customWidgets.dart';
+import 'package:tigerstogether/helper/enum.dart';
+import 'package:tigerstogether/helper/theme.dart';
+import 'package:tigerstogether/helper/utility.dart';
+import 'package:tigerstogether/page/Auth/selectAuthMethod.dart';
+import 'package:tigerstogether/page/common/updateApp.dart';
+import 'package:tigerstogether/page/homePage.dart';
+import 'package:tigerstogether/state/authState.dart';
+import 'package:tigerstogether/widgets/customWidgets.dart';
 import 'package:package_info/package_info.dart';
 import 'package:provider/provider.dart';
 
@@ -32,10 +32,10 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   void timer() async {
-   // final isAppUpdated = await _checkAppVersion();
-   // if (isAppUpdated) {
-     
-    if (true) {  
+    // final isAppUpdated = await _checkAppVersion();
+    // if (isAppUpdated) {
+
+    if (true) {
       print("App is updated");
       Future.delayed(Duration(seconds: 1)).then((_) {
         var state = Provider.of<AuthState>(context, listen: false);
@@ -44,10 +44,11 @@ class _SplashPageState extends State<SplashPage> {
       });
     }
   }
-  /// Return installed app version 
+
+  /// Return installed app version
   /// For testing purpose in debug mode update screen will not be open up
-  /// In  an old version of  realease app is installed on user's device then 
-  /// User will not be able to see home screen 
+  /// In  an old version of  realease app is installed on user's device then
+  /// User will not be able to see home screen
   /// User will redirected to update app screen.
   /// Once user update app with latest verson and back to app then user automatically redirected to welcome / Home page
   Future<bool> _checkAppVersion() async {
@@ -55,10 +56,12 @@ class _SplashPageState extends State<SplashPage> {
     final currentAppVersion = "${packageInfo.version}";
     final appVersion = await _getAppVersionFromFirebaseConfig();
     if (appVersion != currentAppVersion) {
-      if(kDebugMode){
+      if (kDebugMode) {
         cprint("Latest version of app is not installed on your system");
-        cprint("In debug mode we are not restrict devlopers to redirect to update screen");
-        cprint("Redirect devs to update screen can put other devs in confusion");
+        cprint(
+            "In debug mode we are not restrict devlopers to redirect to update screen");
+        cprint(
+            "Redirect devs to update screen can put other devs in confusion");
         return true;
       }
       Navigator.pushReplacement(

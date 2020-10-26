@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_twitter_clone/helper/theme.dart';
-import 'package:flutter_twitter_clone/model/user.dart';
-import 'package:flutter_twitter_clone/page/settings/widgets/headerWidget.dart';
-import 'package:flutter_twitter_clone/page/settings/widgets/settingsAppbar.dart';
-import 'package:flutter_twitter_clone/page/settings/widgets/settingsRowWidget.dart';
-import 'package:flutter_twitter_clone/state/authState.dart';
+import 'package:tigerstogether/helper/theme.dart';
+import 'package:tigerstogether/model/user.dart';
+import 'package:tigerstogether/page/settings/widgets/headerWidget.dart';
+import 'package:tigerstogether/page/settings/widgets/settingsAppbar.dart';
+import 'package:tigerstogether/page/settings/widgets/settingsRowWidget.dart';
+import 'package:tigerstogether/state/authState.dart';
 import 'package:provider/provider.dart';
 
 class NotificationPage extends StatelessWidget {

@@ -1,8 +1,8 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter_twitter_clone/helper/utility.dart';
-import 'package:flutter_twitter_clone/state/authState.dart';
-import 'package:flutter_twitter_clone/widgets/customWidgets.dart';
+import 'package:tigerstogether/helper/utility.dart';
+import 'package:tigerstogether/state/authState.dart';
+import 'package:tigerstogether/widgets/customWidgets.dart';
 import 'package:provider/provider.dart';
 
 class EditProfilePage extends StatefulWidget {
@@ -50,8 +50,8 @@ class _EditProfilePageState extends State<EditProfilePage> {
           child: Stack(
             children: <Widget>[
               Container(
-                    height: 180,
-                    padding: EdgeInsets.only(bottom: 50),
+                height: 180,
+                padding: EdgeInsets.only(bottom: 50),
                 child: customNetworkImage(
                     'https://pbs.twimg.com/profile_banners/457684585/1510495215/1500x500',
                     fit: BoxFit.fill),

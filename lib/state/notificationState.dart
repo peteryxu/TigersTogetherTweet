@@ -1,13 +1,13 @@
 import 'dart:async';
-import 'package:flutter_twitter_clone/helper/enum.dart';
+import 'package:tigerstogether/helper/enum.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:flutter_twitter_clone/helper/utility.dart';
+import 'package:tigerstogether/helper/utility.dart';
 import 'package:firebase_database/firebase_database.dart' as dabase;
-import 'package:flutter_twitter_clone/model/feedModel.dart';
-import 'package:flutter_twitter_clone/model/notificationModel.dart';
-import 'package:flutter_twitter_clone/model/user.dart';
-import 'package:flutter_twitter_clone/state/appState.dart';
+import 'package:tigerstogether/model/feedModel.dart';
+import 'package:tigerstogether/model/notificationModel.dart';
+import 'package:tigerstogether/model/user.dart';
+import 'package:tigerstogether/state/appState.dart';
 
 class NotificationState extends AppState {
   String fcmToken;

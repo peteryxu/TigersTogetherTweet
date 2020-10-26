@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_twitter_clone/helper/theme.dart';
-import 'package:flutter_twitter_clone/model/user.dart';
-import 'package:flutter_twitter_clone/page/settings/widgets/headerWidget.dart';
-import 'package:flutter_twitter_clone/page/settings/widgets/settingsAppbar.dart';
-import 'package:flutter_twitter_clone/page/settings/widgets/settingsRowWidget.dart';
-import 'package:flutter_twitter_clone/state/authState.dart';
-import 'package:flutter_twitter_clone/widgets/customAppBar.dart';
-import 'package:flutter_twitter_clone/widgets/customWidgets.dart';
+import 'package:tigerstogether/helper/theme.dart';
+import 'package:tigerstogether/model/user.dart';
+import 'package:tigerstogether/page/settings/widgets/headerWidget.dart';
+import 'package:tigerstogether/page/settings/widgets/settingsAppbar.dart';
+import 'package:tigerstogether/page/settings/widgets/settingsRowWidget.dart';
+import 'package:tigerstogether/state/authState.dart';
+import 'package:tigerstogether/widgets/customAppBar.dart';
+import 'package:tigerstogether/widgets/customWidgets.dart';
 import 'package:provider/provider.dart';
 
 class DirectMessagesPage extends StatelessWidget {
@@ -24,22 +24,27 @@ class DirectMessagesPage extends StatelessWidget {
       body: ListView(
         physics: BouncingScrollPhysics(),
         children: <Widget>[
-          HeaderWidget('Direct Messages', secondHeader: true,),
+          HeaderWidget(
+            'Direct Messages',
+            secondHeader: true,
+          ),
           SettingRowWidget(
             "Receive message requests",
             navigateTo: null,
             showDivider: false,
             visibleSwitch: true,
             vPadding: 20,
-            subtitle: 'You will be able to receive Direct Message requests from anyone on Fwitter, even if you don\'t follow them.',
+            subtitle:
+                'You will be able to receive Direct Message requests from anyone on Fwitter, even if you don\'t follow them.',
           ),
           SettingRowWidget(
             "Show read receipts",
-            navigateTo:null,
+            navigateTo: null,
             showDivider: false,
             visibleSwitch: true,
-            subtitle: 'When someone sends you a message, people in the conversation will know you\'ve seen it. If you turn off this setting, you won\'t be able to see read receipt from others.',
-            ),
+            subtitle:
+                'When someone sends you a message, people in the conversation will know you\'ve seen it. If you turn off this setting, you won\'t be able to see read receipt from others.',
+          ),
         ],
       ),
     );

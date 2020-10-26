@@ -1,22 +1,22 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_twitter_clone/helper/constant.dart';
-import 'package:flutter_twitter_clone/helper/theme.dart';
-import 'package:flutter_twitter_clone/helper/utility.dart';
-import 'package:flutter_twitter_clone/model/feedModel.dart';
-import 'package:flutter_twitter_clone/model/user.dart';
-import 'package:flutter_twitter_clone/page/feed/composeTweet/state/composeTweetState.dart';
-import 'package:flutter_twitter_clone/page/feed/composeTweet/widget/composeBottomIconWidget.dart';
-import 'package:flutter_twitter_clone/page/feed/composeTweet/widget/composeTweetImage.dart';
-import 'package:flutter_twitter_clone/page/feed/composeTweet/widget/widgetView.dart';
-import 'package:flutter_twitter_clone/state/authState.dart';
-import 'package:flutter_twitter_clone/state/feedState.dart';
-import 'package:flutter_twitter_clone/state/searchState.dart';
-import 'package:flutter_twitter_clone/widgets/customAppBar.dart';
-import 'package:flutter_twitter_clone/widgets/customWidgets.dart';
-import 'package:flutter_twitter_clone/widgets/newWidget/customUrlText.dart';
-import 'package:flutter_twitter_clone/widgets/newWidget/title_text.dart';
+import 'package:tigerstogether/helper/constant.dart';
+import 'package:tigerstogether/helper/theme.dart';
+import 'package:tigerstogether/helper/utility.dart';
+import 'package:tigerstogether/model/feedModel.dart';
+import 'package:tigerstogether/model/user.dart';
+import 'package:tigerstogether/page/feed/composeTweet/state/composeTweetState.dart';
+import 'package:tigerstogether/page/feed/composeTweet/widget/composeBottomIconWidget.dart';
+import 'package:tigerstogether/page/feed/composeTweet/widget/composeTweetImage.dart';
+import 'package:tigerstogether/page/feed/composeTweet/widget/widgetView.dart';
+import 'package:tigerstogether/state/authState.dart';
+import 'package:tigerstogether/state/feedState.dart';
+import 'package:tigerstogether/state/searchState.dart';
+import 'package:tigerstogether/widgets/customAppBar.dart';
+import 'package:tigerstogether/widgets/customWidgets.dart';
+import 'package:tigerstogether/widgets/newWidget/customUrlText.dart';
+import 'package:tigerstogether/widgets/newWidget/title_text.dart';
 import 'package:provider/provider.dart';
 
 class ComposeTweetPage extends StatefulWidget {
@@ -298,7 +298,9 @@ class _ComposeRetweet
             fontSize: 14,
             fontWeight: FontWeight.w400,
           ),
-          urlStyle: TextStyle(color: Theme.of(context).primaryColor, fontWeight: FontWeight.w400),
+          urlStyle: TextStyle(
+              color: Theme.of(context).primaryColor,
+              fontWeight: FontWeight.w400),
         ),
       ],
     );

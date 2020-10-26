@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_twitter_clone/helper/theme.dart';
-import 'package:flutter_twitter_clone/helper/utility.dart';
-import 'package:flutter_twitter_clone/page/profile/profilePage.dart';
-import 'package:flutter_twitter_clone/state/authState.dart';
-import 'package:flutter_twitter_clone/widgets/customWidgets.dart';
+import 'package:tigerstogether/helper/theme.dart';
+import 'package:tigerstogether/helper/utility.dart';
+import 'package:tigerstogether/page/profile/profilePage.dart';
+import 'package:tigerstogether/state/authState.dart';
+import 'package:tigerstogether/widgets/customWidgets.dart';
 import 'package:provider/provider.dart';
 
 class ProfileImageView extends StatelessWidget {
@@ -23,12 +23,16 @@ class ProfileImageView extends StatelessWidget {
         actions: <Widget>[
           PopupMenuButton<Choice>(
             onSelected: (d) {
-                switch (d.title) {
-                  case "Share image link": share(authstate.profileUserModel.profilePic); break;
-                  case "Open in browser": launchURL(authstate.profileUserModel.profilePic); break;
-                  case "Save":  break;
-                }
-                
+              switch (d.title) {
+                case "Share image link":
+                  share(authstate.profileUserModel.profilePic);
+                  break;
+                case "Open in browser":
+                  launchURL(authstate.profileUserModel.profilePic);
+                  break;
+                case "Save":
+                  break;
+              }
             },
             itemBuilder: (BuildContext context) {
               return choices.map((Choice choice) {

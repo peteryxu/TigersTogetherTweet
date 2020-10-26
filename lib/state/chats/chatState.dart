@@ -1,13 +1,13 @@
 import 'dart:convert';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
-import 'package:flutter_twitter_clone/helper/enum.dart';
+import 'package:tigerstogether/helper/enum.dart';
 import 'package:http/http.dart' as http;
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:flutter_twitter_clone/model/chatModel.dart';
-import 'package:flutter_twitter_clone/helper/utility.dart';
-import 'package:flutter_twitter_clone/model/user.dart';
-import 'package:flutter_twitter_clone/state/appState.dart';
+import 'package:tigerstogether/model/chatModel.dart';
+import 'package:tigerstogether/helper/utility.dart';
+import 'package:tigerstogether/model/user.dart';
+import 'package:tigerstogether/state/appState.dart';
 
 class ChatState extends AppState {
   bool setIsChatScreenOpen;
@@ -117,11 +117,10 @@ class ChatState extends AppState {
               return DateTime.parse(y.createdAt)
                   .compareTo(DateTime.parse(x.createdAt));
             } else {
-              if(x.createdAt != null){
+              if (x.createdAt != null) {
                 return 0;
-              }
-              else{
-                 return 1;
+              } else {
+                return 1;
               }
             }
           });

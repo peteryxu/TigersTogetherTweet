@@ -6,10 +6,10 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_twitter_clone/helper/enum.dart';
-import 'package:flutter_twitter_clone/helper/utility.dart';
-import 'package:flutter_twitter_clone/model/user.dart';
-import 'package:flutter_twitter_clone/widgets/customWidgets.dart';
+import 'package:tigerstogether/helper/enum.dart';
+import 'package:tigerstogether/helper/utility.dart';
+import 'package:tigerstogether/model/user.dart';
+import 'package:tigerstogether/widgets/customWidgets.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:path/path.dart' as Path;
 import 'appState.dart';
@@ -116,7 +116,6 @@ class AuthState extends AppState {
         idToken: googleAuth.idToken,
       );
 
-
       user = (await _firebaseAuth.signInWithCredential(credential)).user;
 
       final email = user.email;
@@ -167,7 +166,8 @@ class AuthState extends AppState {
     // Check if user is new or old
     // If user is new then add new user to firebase realtime kDatabase
     if (diff < Duration(seconds: 15)) {
-      print("##### Firebase user just created after successfully log into google. Continue creating profile... ");
+      print(
+          "##### Firebase user just created after successfully log into google. Continue creating profile... ");
       User model = User(
         bio: 'Edit profile to update bio',
         dob: DateTime(1950, DateTime.now().month, DateTime.now().day + 3)

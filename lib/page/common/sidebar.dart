@@ -1,10 +1,10 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_twitter_clone/helper/constant.dart';
-import 'package:flutter_twitter_clone/helper/theme.dart';
-import 'package:flutter_twitter_clone/state/authState.dart';
-import 'package:flutter_twitter_clone/widgets/customWidgets.dart';
-import 'package:flutter_twitter_clone/widgets/newWidget/customUrlText.dart';
+import 'package:tigerstogether/helper/constant.dart';
+import 'package:tigerstogether/helper/theme.dart';
+import 'package:tigerstogether/state/authState.dart';
+import 'package:tigerstogether/widgets/customWidgets.dart';
+import 'package:tigerstogether/widgets/newWidget/customUrlText.dart';
 import 'package:provider/provider.dart';
 
 class SidebarMenu extends StatefulWidget {
@@ -62,8 +62,7 @@ class _SidebarMenuState extends State<SidebarMenu> {
               title: Row(
                 children: <Widget>[
                   UrlText(
-                    text: state.userModel.displayName ??
-                        "",
+                    text: state.userModel.displayName ?? "",
                     style: onPrimaryTitleText.copyWith(
                         color: Colors.black, fontSize: 20),
                   ),
@@ -117,7 +116,7 @@ class _SidebarMenuState extends State<SidebarMenu> {
       BuildContext context, String count, String text, String navigateTo) {
     return InkWell(
       onTap: () {
-        var authstate = Provider.of<AuthState>(context,listen: false);
+        var authstate = Provider.of<AuthState>(context, listen: false);
         // authstate.profileFollowingList = [];
         authstate.getProfileUser();
         _navigateTo(navigateTo);
@@ -202,7 +201,7 @@ class _SidebarMenuState extends State<SidebarMenu> {
   }
 
   void _logOut() {
-    final state = Provider.of<AuthState>(context,listen: false);
+    final state = Provider.of<AuthState>(context, listen: false);
     Navigator.pop(context);
     state.logoutCallback();
   }
@@ -231,10 +230,10 @@ class _SidebarMenuState extends State<SidebarMenu> {
                       icon: AppIcon.profile, isEnable: true, onPressed: () {
                     _navigateTo('ProfilePage');
                   }),
-                 // _menuListRowButton('Lists', icon: AppIcon.lists),
+                  // _menuListRowButton('Lists', icon: AppIcon.lists),
                   _menuListRowButton('Bookmark', icon: AppIcon.bookmark),
                   _menuListRowButton('Moments', icon: AppIcon.moments),
-                 // _menuListRowButton('Fwitter ads', icon: AppIcon.twitterAds),
+                  // _menuListRowButton('Fwitter ads', icon: AppIcon.twitterAds),
                   Divider(),
                   _menuListRowButton('Settings and privacy', isEnable: true,
                       onPressed: () {

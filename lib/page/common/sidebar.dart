@@ -228,19 +228,19 @@ class _SidebarMenuState extends State<SidebarMenu> {
                   ),
                   Divider(),
                   _menuListRowButton('Profile',
-                      icon: AppIcon.profile, isEnable: false, onPressed: () {
+                      icon: AppIcon.profile, isEnable: true, onPressed: () {
                     _navigateTo('ProfilePage');
                   }),
-                  _menuListRowButton('Lists', icon: AppIcon.lists),
+                 // _menuListRowButton('Lists', icon: AppIcon.lists),
                   _menuListRowButton('Bookmark', icon: AppIcon.bookmark),
                   _menuListRowButton('Moments', icon: AppIcon.moments),
-                  _menuListRowButton('Fwitter ads', icon: AppIcon.twitterAds),
+                 // _menuListRowButton('Fwitter ads', icon: AppIcon.twitterAds),
                   Divider(),
                   _menuListRowButton('Settings and privacy', isEnable: true,
                       onPressed: () {
                     _navigateTo('SettingsAndPrivacyPage');
                   }),
-                  _menuListRowButton('Help Center'),
+                  //_menuListRowButton('Help Center'),
                   Divider(),
                   _menuListRowButton('Logout',
                       icon: null, onPressed: _logOut, isEnable: true),

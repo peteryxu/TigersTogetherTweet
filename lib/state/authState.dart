@@ -116,19 +116,24 @@ class AuthState extends AppState {
         idToken: googleAuth.idToken,
       );
 
+
       user = (await _firebaseAuth.signInWithCredential(credential)).user;
 
       final email = user.email;
+      print("@@@@@@@@ logged in email is " + email);
 
-      if (!email.contains('chccs.k12.nc.us') || !email.contains('we-sense.org')|| !email.contains('hitechhandymen.com')) {
-        print("##### This email is NOT part of chapel hill school district/we-sense/hightech, signing out");
+      if (!email.contains('chccs.k12.nc.us') &&
+          !email.contains('we-sense.org') &&
+          !email.contains('hitechhandymen.com')) {
+        print(
+            "##### This email is NOT part of chapel hill school district/we-sense.org/hitechhandymen.com, signing out");
         await signOut();
-        throw new Exception('Need to log in with school email: chccs.k12.nc.us');
+        throw new Exception(
+            'Need to log in with school email: chccs.k12.nc.us');
       } else {
         //try to create User Profile in the firestore
         print("##### This email is  part of chapel hill school district");
       }
-
 
       authStatus = AuthStatus.LOGGED_IN;
       userId = user.uid;
@@ -162,6 +167,7 @@ class AuthState extends AppState {
     // Check if user is new or old
     // If user is new then add new user to firebase realtime kDatabase
     if (diff < Duration(seconds: 15)) {
+      print("##### Firebase user just created after successfully log into google. Continue creating profile... ");
       User model = User(
         bio: 'Edit profile to update bio',
         dob: DateTime(1950, DateTime.now().month, DateTime.now().day + 3)
@@ -177,7 +183,8 @@ class AuthState extends AppState {
       );
       createUser(model, newUser: true);
     } else {
-      cprint('Last login at: ${user.metadata.lastSignInTime}');
+      //cprint('Last login at: ${user.metadata.lastSignInTime}');
+      print("##### Firebase user exists, and so is the profile ");
     }
   }
 
@@ -215,6 +222,7 @@ class AuthState extends AppState {
   /// Else existing user will update with new values
   createUser(User user, {bool newUser = false}) {
     if (newUser) {
+      print("##### creating new user profile...log the event ");
       // Create username by the combination of name and id
       user.userName = getUserName(id: user.userId, name: user.displayName);
       kAnalytics.logEvent(name: 'create_newUser');
@@ -225,6 +233,7 @@ class AuthState extends AppState {
 
     kDatabase.child('profile').child(user.userId).set(user.toJson());
     _userModel = user;
+
     if (_profileUserModelList != null) {
       _profileUserModelList.last = _userModel;
     }
@@ -492,6 +501,4 @@ class AuthState extends AppState {
     //await facebookLogin.logOut();
     return _firebaseAuth.signOut();
   }
-
-
 }

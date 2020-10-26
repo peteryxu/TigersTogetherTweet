@@ -16,12 +16,37 @@ class HomeTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title: Text('TIGERS TOGETHER', style: TextStyle(color: Theme.of(context).primaryColor),),
-            backgroundColor: Colors.white,
-            leading: Padding(
-              child: Image.asset('assets/images/icon-480.png'),
-              padding: const EdgeInsets.all(8.0),
-            )),
+          title: Text(
+            'TIGERS TOGETHER',
+            style: TextStyle(color: Theme.of(context).primaryColor),
+          ),
+          backgroundColor: Colors.white,
+          leading: Padding(
+            child: Image.asset('assets/images/icon-480.png'),
+            padding: const EdgeInsets.all(8.0),
+          ),
+          /*
+          actions: <Widget>[
+            Padding(
+                padding: EdgeInsets.only(right: 20.0),
+                child: GestureDetector(
+                  onTap: () {},
+                  child: Icon(
+                    Icons.logout,
+                    size: 26.0,
+                  ),
+                )),
+            
+            Padding(
+                padding: EdgeInsets.only(right: 20.0),
+                child: GestureDetector(
+                  onTap: () {},
+                  child: Icon(Icons.more_vert),
+                )),
+                
+          ],
+          */
+        ),
         body: Container(
           child: SingleChildScrollView(
             child: Column(

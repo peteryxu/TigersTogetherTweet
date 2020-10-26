@@ -59,8 +59,8 @@ class _SignupState extends State<Signup> {
           children: <Widget>[
             SizedBox(height: 10),
             TitleText(
-              'Have a School Email?',
-              fontSize: 20,
+              'Students, Teachers & School Staff',
+              fontSize: 18,
             ),
             SizedBox(height: 15),
             GoogleLoginButton(
@@ -69,11 +69,15 @@ class _SignupState extends State<Signup> {
             ),
             SizedBox(height: 15),
             Divider(height: 30),
-            SizedBox(height: 15),
+            //SizedBox(height: 15),
             TitleText(
               'Parents and Others',
-              fontSize: 20,
+              fontSize: 18,
             ),
+            /*TitleText(
+              'Need Approval',
+              fontSize: 14,
+            ), */
             SizedBox(height: 15),
             _entryFeild('Name', controller: _nameController),
             _entryFeild('Enter email',
@@ -165,6 +169,13 @@ class _SignupState extends State<Signup> {
       customSnackBar(_scaffoldKey, 'Name length cannot exceed 27 character');
       return;
     }
+
+    if (!_emailController.text.contains("5g.com")) {
+      customSnackBar(
+          _scaffoldKey, 'This App needs email with special domain to sign up');
+      return;
+    }
+
     if (_emailController.text == null ||
         _emailController.text.isEmpty ||
         _passwordController.text == null ||

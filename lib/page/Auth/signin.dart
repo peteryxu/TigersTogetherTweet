@@ -44,10 +44,32 @@ class _SignInState extends State<SignIn> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            SizedBox(height: 50),
+
+           /* SizedBox(height: 50),
+            GoogleLoginButton(
+              loginCallback: widget.loginCallback,
+              loader: loader,
+            ),
+            SizedBox(height: 30), */
+
+            SizedBox(height: 10),
             TitleText(
-              "Enter Email",
-              fontSize: 20,
+              'Students, Teachers & School Staff',
+              fontSize: 18,
+            ),
+            SizedBox(height: 15),
+            GoogleLoginButton(
+              loginCallback: widget.loginCallback,
+              loader: loader,
+            ),
+            SizedBox(height: 15),
+            Divider(height: 30),
+
+
+            SizedBox(height: 15),
+            TitleText(
+              'Parents and Others',
+              fontSize: 18,
             ),
             SizedBox(height: 30),
             _entryFeild('Enter email', controller: _emailController),
@@ -65,11 +87,7 @@ class _SignInState extends State<SignIn> {
             SizedBox(
               height: 10,
             ),
-            GoogleLoginButton(
-              loginCallback: widget.loginCallback,
-              loader: loader,
-            ),
-            SizedBox(height: 100),
+            
           ],
         ),
       ),
@@ -86,7 +104,7 @@ class _SignInState extends State<SignIn> {
       ),
       child: TextField(
         controller: controller,
-        autofocus: true,
+        //autofocus: true,
         keyboardType: TextInputType.emailAddress,
         style: TextStyle(
           fontStyle: FontStyle.normal,
